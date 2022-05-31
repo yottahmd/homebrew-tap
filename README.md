@@ -1,4 +1,4 @@
-# homebrew-tools
+# homebrew-tap
 
 Homebrew formula for installing yohamta's apps & tools.
 
