@@ -9,17 +9,17 @@ class Dagu < Formula
   license "GNU General Public License v3.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/yohamta/dagu/releases/download/v1.3.6/dagu_1.3.6_Darwin_x86_64.tar.gz"
-      sha256 "ba083f57bc86297a235510e5f1a7ece830f26a488888d28c59f307defe94d7f3"
+    if Hardware::CPU.arm?
+      url "https://github.com/yohamta/dagu/releases/download/v1.3.6/dagu_1.3.6_Darwin_arm64.tar.gz"
+      sha256 "9e566025e44c20df469f33ebe4c3dabfcdb1c20b2774553d4f901a9cf3c8d0b1"
 
       def install
         bin.install "dagu"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/yohamta/dagu/releases/download/v1.3.6/dagu_1.3.6_Darwin_arm64.tar.gz"
-      sha256 "156213e6961f6f1c6a9b8a52040825b4e9da1e1556c8a586eaf9189084dcd83c"
+    if Hardware::CPU.intel?
+      url "https://github.com/yohamta/dagu/releases/download/v1.3.6/dagu_1.3.6_Darwin_x86_64.tar.gz"
+      sha256 "74fb985a05504560cd57ec07110cb7bf0c241ade6070f6f9c1aaf9645e0d0def"
 
       def install
         bin.install "dagu"
@@ -30,7 +30,7 @@ class Dagu < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/yohamta/dagu/releases/download/v1.3.6/dagu_1.3.6_Linux_arm64.tar.gz"
-      sha256 "49fd46e8e8347ae5c58177bdea62a74e5d2e347609c3a66796a79f4438111b4e"
+      sha256 "a68d6234b01c0a9334cc6dc22953c03f0e948e398f68f7a6f4dde9396f867675"
 
       def install
         bin.install "dagu"
@@ -38,7 +38,7 @@ class Dagu < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/yohamta/dagu/releases/download/v1.3.6/dagu_1.3.6_Linux_x86_64.tar.gz"
-      sha256 "3e77bd322966e138a55f09ac703146c0d682cb20dd1d9abf4890f3c6bb1bfca4"
+      sha256 "7062826d14f1bbe415e21cfe43cef87299faa0103f7654bd23e96b4ebce0270b"
 
       def install
         bin.install "dagu"
