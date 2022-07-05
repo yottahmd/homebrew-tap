@@ -5,21 +5,21 @@
 class Dagu < Formula
   desc "A No-code workflow executor that runs DAGs defined in a simple YAML format"
   homepage "https://github.com/yohamta/dagu"
-  version "1.4.2"
+  version "1.4.3"
   license "GNU General Public License v3.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/yohamta/dagu/releases/download/v1.4.2/dagu_1.4.2_Darwin_x86_64.tar.gz"
-      sha256 "88c7c0a46cd8b89a17853406e59e9069678711d90280a7a2a5d2e07267c729f4"
+    if Hardware::CPU.arm?
+      url "https://github.com/yohamta/dagu/releases/download/v1.4.3/dagu_1.4.3_Darwin_arm64.tar.gz"
+      sha256 "1c1fc3887ecc9f0f9626547d1cf23c68c08b36b664b27a56b51c348dde2f9b20"
 
       def install
         bin.install "dagu"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/yohamta/dagu/releases/download/v1.4.2/dagu_1.4.2_Darwin_arm64.tar.gz"
-      sha256 "9ea4873c23ec6d88e1a6ee815fa839dbadbf85c6e4a6ad0afb1a5dc312af80f5"
+    if Hardware::CPU.intel?
+      url "https://github.com/yohamta/dagu/releases/download/v1.4.3/dagu_1.4.3_Darwin_x86_64.tar.gz"
+      sha256 "7538e0b43bdca1fc0b7908c9126dd0e20b4bf57617f9e73dad89a2bfa9952d6f"
 
       def install
         bin.install "dagu"
@@ -29,16 +29,16 @@ class Dagu < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/yohamta/dagu/releases/download/v1.4.2/dagu_1.4.2_Linux_x86_64.tar.gz"
-      sha256 "fec755affdf6f3d5080e3c35315c12b6468cea3b63aafbecfe8ad88850d86f3d"
+      url "https://github.com/yohamta/dagu/releases/download/v1.4.3/dagu_1.4.3_Linux_x86_64.tar.gz"
+      sha256 "9f9ca8a0eca6c3b6d2417eff55e20b441ee00077bd590fc278eb10ed5b804bea"
 
       def install
         bin.install "dagu"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/yohamta/dagu/releases/download/v1.4.2/dagu_1.4.2_Linux_arm64.tar.gz"
-      sha256 "b3b6cceb14869971f76ddae27d4607a53e0468dde4bda9590a268e9ec770727e"
+      url "https://github.com/yohamta/dagu/releases/download/v1.4.3/dagu_1.4.3_Linux_arm64.tar.gz"
+      sha256 "8bdd840c7d7367207161d324a5600fd135c5906dde7438e9d1667ca92ea501c4"
 
       def install
         bin.install "dagu"
