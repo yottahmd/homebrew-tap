@@ -5,21 +5,21 @@
 class Dagu < Formula
   desc "A No-code workflow executor that runs DAGs defined in a simple YAML format"
   homepage "https://github.com/yohamta/dagu"
-  version "1.6.6"
+  version "1.6.7"
   license "GNU General Public License v3.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/yohamta/dagu/releases/download/v1.6.6/dagu_1.6.6_Darwin_arm64.tar.gz"
-      sha256 "059377095ff07a638ec4f9c6cea98fa5091d35e2df58d9e700f8ddce2e07327d"
+    if Hardware::CPU.intel?
+      url "https://github.com/yohamta/dagu/releases/download/v1.6.7/dagu_1.6.7_Darwin_x86_64.tar.gz"
+      sha256 "5f129301ba783fc811c2b19de36f9de9707090da5dd06f066877639e29d256db"
 
       def install
         bin.install "dagu"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/yohamta/dagu/releases/download/v1.6.6/dagu_1.6.6_Darwin_x86_64.tar.gz"
-      sha256 "db6102cf713a1d917958a51801fd5d80ad035cea2a5c69864401f84526d78aa9"
+    if Hardware::CPU.arm?
+      url "https://github.com/yohamta/dagu/releases/download/v1.6.7/dagu_1.6.7_Darwin_arm64.tar.gz"
+      sha256 "66e3647ca8c9f2da3b97f82c2fa132c0c598c1859a6ef28c7cfe424a08cb6511"
 
       def install
         bin.install "dagu"
@@ -28,17 +28,17 @@ class Dagu < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/yohamta/dagu/releases/download/v1.6.6/dagu_1.6.6_Linux_x86_64.tar.gz"
-      sha256 "b758841d92123f9080d1f92dd19fa51894a8c33bed80a6dcc54510cf25cb1ce1"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/yohamta/dagu/releases/download/v1.6.7/dagu_1.6.7_Linux_arm64.tar.gz"
+      sha256 "633daca6e6f61ade017d114521a61ded6da9a812edff63c940133a2640acf25d"
 
       def install
         bin.install "dagu"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/yohamta/dagu/releases/download/v1.6.6/dagu_1.6.6_Linux_arm64.tar.gz"
-      sha256 "3d7d4e9ccf83ed3379a7886cf7a91e0e5848d5abe5d5b5ae5f1dea23a663cae5"
+    if Hardware::CPU.intel?
+      url "https://github.com/yohamta/dagu/releases/download/v1.6.7/dagu_1.6.7_Linux_x86_64.tar.gz"
+      sha256 "51d6baa829c69102f81e97e2ba9ea5fecff6f11401a9484c8e42454297fc5400"
 
       def install
         bin.install "dagu"
