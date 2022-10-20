@@ -5,21 +5,21 @@
 class Dagu < Formula
   desc "A No-code workflow executor that runs DAGs defined in a simple YAML format"
   homepage "https://github.com/yohamta/dagu"
-  version "1.9.0"
+  version "1.9.1"
   license "GNU General Public License v3.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/yohamta/dagu/releases/download/v1.9.0/dagu_1.9.0_Darwin_x86_64.tar.gz"
-      sha256 "8f613c69fe3ed2f209a49816e23c482a62ec81ee1434eea803ca5a646ac52e8f"
+      url "https://github.com/yohamta/dagu/releases/download/v1.9.1/dagu_1.9.1_Darwin_x86_64.tar.gz"
+      sha256 "7ed222c800c2f0e8f80a3a89fa1bf9cd2304be092218e25370a310380edbe4d5"
 
       def install
         bin.install "dagu"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/yohamta/dagu/releases/download/v1.9.0/dagu_1.9.0_Darwin_arm64.tar.gz"
-      sha256 "2d715be4540e237f8b0f56deae1019338705a48cd49e1db39bbc918f25a92250"
+      url "https://github.com/yohamta/dagu/releases/download/v1.9.1/dagu_1.9.1_Darwin_arm64.tar.gz"
+      sha256 "4657e137e2854b45d3975e2312594a9b29ebd0b044ec3855f25667e609e2bcee"
 
       def install
         bin.install "dagu"
@@ -29,16 +29,16 @@ class Dagu < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/yohamta/dagu/releases/download/v1.9.0/dagu_1.9.0_Linux_x86_64.tar.gz"
-      sha256 "88c3e7e8719f92e821dc5bceb1a318d38ede5e933beedb19b41ba5de6b9bf65b"
+      url "https://github.com/yohamta/dagu/releases/download/v1.9.1/dagu_1.9.1_Linux_x86_64.tar.gz"
+      sha256 "a4f0bf088b418b0a4829de5e1f6c5a55cc5621a01f78804e8ab535c4cdb7becd"
 
       def install
         bin.install "dagu"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/yohamta/dagu/releases/download/v1.9.0/dagu_1.9.0_Linux_arm64.tar.gz"
-      sha256 "cc74aea3376a03b366c24ea644023d872b4032857f6263537cc4f18afb66cde7"
+      url "https://github.com/yohamta/dagu/releases/download/v1.9.1/dagu_1.9.1_Linux_arm64.tar.gz"
+      sha256 "f5fa9bcfc9aa6debeb17e823f41cbe13310f9b1746ba090e8b4fecbf4acd08cb"
 
       def install
         bin.install "dagu"
