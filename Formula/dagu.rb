@@ -5,21 +5,21 @@
 class Dagu < Formula
   desc "A No-code workflow executor that runs DAGs defined in a simple YAML format"
   homepage "https://github.com/yohamta/dagu"
-  version "1.9.1"
+  version "1.9.2"
   license "GNU General Public License v3.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/yohamta/dagu/releases/download/v1.9.1/dagu_1.9.1_Darwin_x86_64.tar.gz"
-      sha256 "7ed222c800c2f0e8f80a3a89fa1bf9cd2304be092218e25370a310380edbe4d5"
+      url "https://github.com/yohamta/dagu/releases/download/v1.9.2/dagu_1.9.2_Darwin_x86_64.tar.gz"
+      sha256 "1cafb58bab11ec569dd1bd1dd53e6a57d196478929bfc03f4cdb16fb8c6308fa"
 
       def install
         bin.install "dagu"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/yohamta/dagu/releases/download/v1.9.1/dagu_1.9.1_Darwin_arm64.tar.gz"
-      sha256 "4657e137e2854b45d3975e2312594a9b29ebd0b044ec3855f25667e609e2bcee"
+      url "https://github.com/yohamta/dagu/releases/download/v1.9.2/dagu_1.9.2_Darwin_arm64.tar.gz"
+      sha256 "bd286b9c99d0d229abb427b105180b8749bf3f33b4c2a177235358cc3250c857"
 
       def install
         bin.install "dagu"
@@ -28,17 +28,17 @@ class Dagu < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/yohamta/dagu/releases/download/v1.9.1/dagu_1.9.1_Linux_x86_64.tar.gz"
-      sha256 "a4f0bf088b418b0a4829de5e1f6c5a55cc5621a01f78804e8ab535c4cdb7becd"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/yohamta/dagu/releases/download/v1.9.2/dagu_1.9.2_Linux_arm64.tar.gz"
+      sha256 "35372cc9fa46c189b74496bdd536143de3c121b7a24df3b0008d02732fedb3eb"
 
       def install
         bin.install "dagu"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/yohamta/dagu/releases/download/v1.9.1/dagu_1.9.1_Linux_arm64.tar.gz"
-      sha256 "f5fa9bcfc9aa6debeb17e823f41cbe13310f9b1746ba090e8b4fecbf4acd08cb"
+    if Hardware::CPU.intel?
+      url "https://github.com/yohamta/dagu/releases/download/v1.9.2/dagu_1.9.2_Linux_x86_64.tar.gz"
+      sha256 "edcfa683a77390c6a0b408c5b48a4576e6a236df16995867e6081406f5694bd0"
 
       def install
         bin.install "dagu"
