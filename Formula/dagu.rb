@@ -9,17 +9,17 @@ class Dagu < Formula
   license "GNU General Public License v3.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/dagu-dev/dagu/releases/download/1.10.5/dagu_1.10.5_Darwin_arm64.tar.gz"
-      sha256 "cc8c36a836feb569c6c9fe06d30707e1877370794285bc45a5c7c75e365ccaa5"
+    if Hardware::CPU.intel?
+      url "https://github.com/dagu-dev/dagu/releases/download/v1.10.5/dagu_1.10.5_Darwin_x86_64.tar.gz"
+      sha256 "8656f231c954c16e5e1aef9b00882ebeccf8bae0e8d20e9b3a113e8caf0a7da1"
 
       def install
         bin.install "dagu"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/dagu-dev/dagu/releases/download/1.10.5/dagu_1.10.5_Darwin_x86_64.tar.gz"
-      sha256 "affa7e9bf9cacd4090c19f63c82a1be35da6e395470eaed5261348da4d23c7e1"
+    if Hardware::CPU.arm?
+      url "https://github.com/dagu-dev/dagu/releases/download/v1.10.5/dagu_1.10.5_Darwin_arm64.tar.gz"
+      sha256 "d35e723350ef610030cb0610bcad8c0b5963020f5e6abc65bb8b3b06fa445274"
 
       def install
         bin.install "dagu"
@@ -29,16 +29,16 @@ class Dagu < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/dagu-dev/dagu/releases/download/1.10.5/dagu_1.10.5_Linux_x86_64.tar.gz"
-      sha256 "17179fefd34c36858fb18daf3c0b4a4141f56936d37aa7e061d0b1f8a740df62"
+      url "https://github.com/dagu-dev/dagu/releases/download/v1.10.5/dagu_1.10.5_Linux_x86_64.tar.gz"
+      sha256 "8bfd4700c6981261fc903f48024a0974d74f2c28233e501e92922f6541548cfd"
 
       def install
         bin.install "dagu"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dagu-dev/dagu/releases/download/1.10.5/dagu_1.10.5_Linux_arm64.tar.gz"
-      sha256 "630d323d8c123fd87f29d43cc78ed2238c432ee74c52134a0daad68cf5e041d9"
+      url "https://github.com/dagu-dev/dagu/releases/download/v1.10.5/dagu_1.10.5_Linux_arm64.tar.gz"
+      sha256 "80bfd4be62313151dd03b36e311dc93b6b9f37d2a585448ecb4dfcfa7b974029"
 
       def install
         bin.install "dagu"
