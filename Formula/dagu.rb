@@ -5,21 +5,21 @@
 class Dagu < Formula
   desc "A No-code workflow executor that runs DAGs defined in a simple YAML format"
   homepage "https://github.com/dagu-dev/dagu"
-  version "1.12.11"
+  version "1.13.0"
   license "GNU General Public License v3.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/dagu-dev/dagu/releases/download/v1.12.11/dagu_1.12.11_darwin_amd64.tar.gz"
-      sha256 "a4ac6197d6cfba3985eadac829ea34bfa549b6b8db8126ca3bd520e13aa77edc"
+    on_intel do
+      url "https://github.com/dagu-dev/dagu/releases/download/v1.13.0/dagu_1.13.0_darwin_amd64.tar.gz"
+      sha256 "42258b77cd2d5cfbce893ae83fe8d323895491fc25d6630a14955c1429feadd0"
 
       def install
         bin.install "dagu"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/dagu-dev/dagu/releases/download/v1.12.11/dagu_1.12.11_darwin_arm64.tar.gz"
-      sha256 "933a63de6b7f851824c9030fed59ef7ba6207d7fe9fa2dc682d01c4869efcfdb"
+    on_arm do
+      url "https://github.com/dagu-dev/dagu/releases/download/v1.13.0/dagu_1.13.0_darwin_arm64.tar.gz"
+      sha256 "6559b86947d17ed2943dd167d70588d732c6cd86e490e06b16c57b8328331c56"
 
       def install
         bin.install "dagu"
@@ -28,20 +28,24 @@ class Dagu < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dagu-dev/dagu/releases/download/v1.12.11/dagu_1.12.11_linux_arm64.tar.gz"
-      sha256 "af186090c398006a3d07ec625f2acb660f07db89dabf7b96649496e250fea4c6"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/dagu-dev/dagu/releases/download/v1.13.0/dagu_1.13.0_linux_amd64.tar.gz"
+        sha256 "73cbae1a860ec6382f5cab922df4878bad97f455ec3cad2de35650aa19dfcdb3"
 
-      def install
-        bin.install "dagu"
+        def install
+          bin.install "dagu"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/dagu-dev/dagu/releases/download/v1.12.11/dagu_1.12.11_linux_amd64.tar.gz"
-      sha256 "d78ede3ed68f6ae886b4fa122cd1b1a0cb7d42a7015f52a7affbe5e8612a0792"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/dagu-dev/dagu/releases/download/v1.13.0/dagu_1.13.0_linux_arm64.tar.gz"
+        sha256 "ec0b48fb4639de996487988eeaedf1829cf423b9248b2ea51f4db1da67996beb"
 
-      def install
-        bin.install "dagu"
+        def install
+          bin.install "dagu"
+        end
       end
     end
   end
