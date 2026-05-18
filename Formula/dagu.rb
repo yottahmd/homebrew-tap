@@ -5,21 +5,21 @@
 class Dagu < Formula
   desc "A compact, portable, and language-agnostic workflow engine"
   homepage "https://github.com/dagu-org/dagu"
-  version "2.6.10"
+  version "2.7.1"
   license "GNU General Public License v3.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/dagucloud/dagu/releases/download/v2.6.10/dagu_2.6.10_darwin_amd64.tar.gz"
-      sha256 "2f125858c37a8621e1857613d49a368457d7d0201c49fda721ba8cf15910b433"
+      url "https://github.com/dagucloud/dagu/releases/download/v2.7.1/dagu_2.7.1_darwin_amd64.tar.gz"
+      sha256 "f387693de5c369b8cfaa99a1f17a39678a108c033fc0cdb738302a271ed0a89e"
 
       define_method(:install) do
         bin.install "dagu"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/dagucloud/dagu/releases/download/v2.6.10/dagu_2.6.10_darwin_arm64.tar.gz"
-      sha256 "daab56699b6322d2c054f110b3af372af61f2ae5c9d6d83ed83446d14ae45c1f"
+      url "https://github.com/dagucloud/dagu/releases/download/v2.7.1/dagu_2.7.1_darwin_arm64.tar.gz"
+      sha256 "f945702972017a3ed8d38b4ebf22736b59c3ab1d72fccba1ceab41cc2a0eb123"
 
       define_method(:install) do
         bin.install "dagu"
@@ -29,22 +29,22 @@ class Dagu < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dagucloud/dagu/releases/download/v2.6.10/dagu_2.6.10_linux_amd64.tar.gz"
-      sha256 "0487db13bccea00131cf173bc1d4a16d9d83bd3382021fde873ed48ebd28f396"
+      url "https://github.com/dagucloud/dagu/releases/download/v2.7.1/dagu_2.7.1_linux_amd64.tar.gz"
+      sha256 "21eea09bc4d64047bbfdcfe35fa7b3f222840af12fb4618baab2b31c8bf38733"
       define_method(:install) do
         bin.install "dagu"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/dagucloud/dagu/releases/download/v2.6.10/dagu_2.6.10_linux_armv6.tar.gz"
-      sha256 "e0a8d6087ee730dabfadec3d39fb5a5a117369151e24d8e51561cbb20bd15b1d"
+      url "https://github.com/dagucloud/dagu/releases/download/v2.7.1/dagu_2.7.1_linux_armv6.tar.gz"
+      sha256 "02226821f0c459f90445d5ee111573a0f503a92d2103f77ebae8c0bfdb58f95e"
       define_method(:install) do
         bin.install "dagu"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/dagucloud/dagu/releases/download/v2.6.10/dagu_2.6.10_linux_arm64.tar.gz"
-      sha256 "59fb8cb5beadad406708e2d6d36fc7f0d96f3acd886a8a9ff00b48b1a1dd6b92"
+      url "https://github.com/dagucloud/dagu/releases/download/v2.7.1/dagu_2.7.1_linux_arm64.tar.gz"
+      sha256 "70d1caf5c41f92f16c78778607499dda6fd1df065648cfd7978771d5e5d792d5"
       define_method(:install) do
         bin.install "dagu"
       end
